@@ -1,0 +1,26 @@
+{
+  "name": "msw-otel-bug-repro",
+  "version": "1.0.0",
+  "description": "Reproduction case for MSW + OpenTelemetry bug where streaming requests lose headers",
+  "type": "module",
+  "scripts": {
+    "repro": "node --env-file=.env --import ./instrumentation.mjs repro.mjs",
+    "repro:no-otel": "node --env-file=.env repro-without-otel.mjs"
+  },
+  "keywords": [
+    "msw",
+    "opentelemetry",
+    "bug",
+    "streaming",
+    "sse"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@launchdarkly/node-server-sdk": "^9.11.3",
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.78.0",
+    "@opentelemetry/sdk-node": "^0.220.0",
+    "msw": "^2.11.6"
+  }
+}

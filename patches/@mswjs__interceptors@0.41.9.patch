@@ -1,0 +1,26 @@
+diff --git a/lib/node/ClientRequest-2loAH7xM.cjs b/lib/node/ClientRequest-2loAH7xM.cjs
+index 6231f4d1b29b6d70dbf40c465ac18524f3e866c8..5a71431da5ce43f9084274b141526e84a425ab66 100644
+--- a/lib/node/ClientRequest-2loAH7xM.cjs
++++ b/lib/node/ClientRequest-2loAH7xM.cjs
+@@ -865,7 +865,7 @@ function normalizeClientRequestArgs(defaultProtocol, args) {
+ 		options = resolveRequestOptions(args, url);
+ 		logger.info("derived request options:", options);
+ 		callback = resolveCallback(args);
+-	} else if ("hash" in args[0] && !("method" in args[0])) {
++	} else if ("hash" in args[0] && !("method" in args[0]) && !("headers" in args[0])) {
+ 		const [legacyUrl] = args;
+ 		logger.info("first argument is a legacy URL:", legacyUrl);
+ 		if (legacyUrl.hostname === null) {
+diff --git a/lib/node/ClientRequest-DGhBX21V.mjs b/lib/node/ClientRequest-DGhBX21V.mjs
+index 1628fe71f530b204bf13a13d1f16833bd8104d5a..5657f1f8be8d4194c701985a6fda2f16f5386fa4 100644
+--- a/lib/node/ClientRequest-DGhBX21V.mjs
++++ b/lib/node/ClientRequest-DGhBX21V.mjs
+@@ -861,7 +861,7 @@ function normalizeClientRequestArgs(defaultProtocol, args) {
+ 		options = resolveRequestOptions(args, url);
+ 		logger.info("derived request options:", options);
+ 		callback = resolveCallback(args);
+-	} else if ("hash" in args[0] && !("method" in args[0])) {
++	} else if ("hash" in args[0] && !("method" in args[0]) && !("headers" in args[0])) {
+ 		const [legacyUrl] = args;
+ 		logger.info("first argument is a legacy URL:", legacyUrl);
+ 		if (legacyUrl.hostname === null) {
